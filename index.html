@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Promises</title>
+  </head>
+  <body>
+    <button type="button" onclick="procesa()">Procesa con Promise</button>
+    <footer>Copyright &copy;2021 Christian Ricardo Ramírez Morales </footer>
+    <script>
+      async function procesa() {
+        try {
+          const res = await Promise.resolve("hola mi nombre es christian");
+          alert(res);
+          await Promise.reject(new Error("ouch, lo sentimos hubo un error"));
+          alert("bye");
+        } catch (e) {
+          alert(e);
+        }
+      }
+    </script>
+  </body>
+</html>
